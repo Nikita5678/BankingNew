@@ -16,7 +16,7 @@ public class AddPayeeController {
 	private PayeeService service;
 	
 	@PostMapping(value = "/addPayee", consumes = "application/json")
-	public void getPayeeList(@RequestBody  PayeeDetail payee) {
+	public void addPayee(@RequestBody  PayeeDetail payee) {
 		System.out.println(payee);
 		
 		try {
