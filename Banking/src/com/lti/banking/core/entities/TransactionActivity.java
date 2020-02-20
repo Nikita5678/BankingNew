@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "TRANSACTION_ACTIVITY")
 public class TransactionActivity {
@@ -29,6 +31,7 @@ public class TransactionActivity {
 	@Column(name="TRANSACTION_TYPE")
 	private String transactionType;
 	
+	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name="DATE_AND_TIME")
 	private Date date;
 	
