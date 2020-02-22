@@ -24,6 +24,7 @@ public class BankDaoImpl implements BankDao{
 	@Transactional(propagation = Propagation.REQUIRED)
 	@Override
 	public boolean insertNewUser(Register reg) throws HrException {
+		reg.setApplicationStatus("Unapproved");
 		manager.persist(reg);
 		return true;
 	}
@@ -31,8 +32,9 @@ public class BankDaoImpl implements BankDao{
 
 	@Override
 	public ArrayList<Register> applicantDetails() throws HrException {
-		String strQry = "from Register";
+		String strQry = "select r from Register r where r.applicationStatus= :status";
 		Query qry = manager.createQuery(strQry);
+		qry.setParameter("status","Unapproved");
 		List<Register> applicantList = qry.getResultList();
 		return (ArrayList<Register>) applicantList;
 	}

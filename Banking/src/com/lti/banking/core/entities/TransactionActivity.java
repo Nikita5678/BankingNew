@@ -36,7 +36,7 @@ public class TransactionActivity {
 	private Date date;
 	
 	@Column(name="TRANSFER_AMOUNT")
-	private double ammount;
+	private double amount;
 	
 	@Column(name="STATUS")
 	private String status;
@@ -54,7 +54,7 @@ public class TransactionActivity {
 		this.payeeAccNo = payeeAccNo;
 		this.transactionType = transactionType;
 		this.date = date;
-		this.ammount = ammount;
+		this.amount = amount;
 		this.status = status;
 	}
 
@@ -106,12 +106,12 @@ public class TransactionActivity {
 		this.date = date;
 	}
 
-	public double getAmmount() {
-		return ammount;
+	public double getAmount() {
+		return amount;
 	}
 
-	public void setAmmount(double ammount) {
-		this.ammount = ammount;
+	public void setAmount(double amount) {
+		this.amount = amount;
 	}
 
 	public String getStatus() {
@@ -126,7 +126,7 @@ public class TransactionActivity {
 	public String toString() {
 		return "TransactionActivity [transactionNo=" + transactionNo + ", name=" + name + ", accountNo=" + accountNo
 				+ ", payeeAccNo=" + payeeAccNo + ", transactionType=" + transactionType + ", date=" + date
-				+ ", ammount=" + ammount + ", status=" + status + "]";
+				+ ", amount=" + amount + ", status=" + status + "]";
 	}
 	
 	

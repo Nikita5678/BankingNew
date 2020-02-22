@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.banking.core.daos.PayeeDao;
 import com.lti.banking.core.entities.PayeeDetail;
@@ -22,6 +24,7 @@ public class PayeeServiceImpl implements PayeeService {
 		return dao.getPayeeList();
 	}
 
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	@Override
 	public boolean createNewPayee(PayeeDetail addpayee) throws PayeeException {
 		return dao.insertNewPayee(addpayee);

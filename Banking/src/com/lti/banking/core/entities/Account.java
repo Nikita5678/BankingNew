@@ -20,7 +20,7 @@ public class Account {
 	private String userId;
 
 	@Column(name = "BALANCE")
-	private long balance;
+	private double balance;
 
 	@Column(name = "ACC_TYPE")
 	private String accType;
@@ -29,7 +29,7 @@ public class Account {
 
 	}
 
-	public Account(long accountNo, long applicationNo, String userId, long balance, String accType) {
+	public Account(long accountNo, long applicationNo, String userId, double balance, String accType) {
 		super();
 		this.accountNo = accountNo;
 		this.applicationNo = applicationNo;
@@ -62,11 +62,11 @@ public class Account {
 		this.userId = userId;
 	}
 
-	public long getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(long balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 

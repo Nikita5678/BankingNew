@@ -26,8 +26,8 @@ public class PayeeDaoImpl implements PayeeDao {
 	public ArrayList<PayeeDetail> getPayeeList() throws PayeeException {
 		String strQry = "from PayeeDetail";
 		Query qry = manager.createQuery(strQry);
-		List<PayeeDetail> applicantList = qry.getResultList();
-		return (ArrayList<PayeeDetail>) applicantList;
+		List<PayeeDetail> payeeList = qry.getResultList();
+		return (ArrayList<PayeeDetail>) payeeList;
 	
 	}
 	
